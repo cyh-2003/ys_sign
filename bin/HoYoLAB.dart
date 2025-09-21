@@ -5,6 +5,8 @@ import 'dart:convert';
 void main() async{
   String HoYoLAB_cookie = jsonDecode(await File('data.json').readAsString())['HoYoLAB_cookie'];
   checkSign(HoYoLAB_cookie);
+
+  HoYoLAB_Sign(HoYoLAB_cookie);
 }
 
 /// 此接口可查询签到状态
@@ -31,10 +33,10 @@ Future<dynamic> HoYoLAB_Sign(String cookie) async{
   String ua_version = jsonDecode(await File('data.json').readAsString())['HoYoLAB_ua_version'];
   Map<String, String>? head = {
     'User-Agent': "Mozilla/5.0 (Linux; Android 12) Mobile miHoYoBBSOversea/$ua_version",
-    'referer': "https://act.hoyolab.com/",
-    'cookie':cookie
+    'Referer': "https://act.hoyolab.com/",
+    'Cookie':cookie
   };
-  http.Response response = await http.post(uri,headers: head,body: jsonEncode({'act_id':'e202102251931481','region':'cn_gf01','uid':'115925775','lang':'zh-cn'}));
+  http.Response response = await http.post(uri,headers: head,body: jsonEncode({'act_id':'e202102251931481'}));
   if (response.statusCode == 200) {
     var data = jsonDecode(response.body) as Map<String, dynamic>;
     if (data[r'retcode'] == 0) {

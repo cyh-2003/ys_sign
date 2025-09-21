@@ -16,9 +16,7 @@
 
 8. 复制Cookie部分除`Cookie:`的全部内容
 
-9. 将此处的复制到的 Cookie 先粘贴到 config 文件的 Cookie 处
-
-10. **此时 Cookie 已经获取完毕了**
+9. 将此处的复制到的 Cookie 先粘贴到 data.json
 
 ## 海外版获取Cookie
 
@@ -34,7 +32,7 @@
 
 4. 从`ltoken=....`开始复制到结尾
 
-5. 将获取到的 Cookie 粘贴到之前获取到 OS 的 Cookie 里面
+5. 将获取到的 Cookie 粘贴到 data.json
 
 > 本文档内容属于 `某开源项目`,遵循 MIT 协议
 > 

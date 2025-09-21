@@ -7,6 +7,11 @@ import 'dart:io';
 Random random = Random();
 const String salt = r't0qEgfub6cvueAPgR5m9aQWWVciEer7v';
 
+void main() async{
+  String miHoYo_cookie = jsonDecode(await File('data.json').readAsString())['miHoYo_cookie'];
+  miHoYo_Sign(miHoYo_cookie);
+}
+
 Future<dynamic> miHoYo_Sign(String cookie) async{
   final Uri url = Uri.https('api-takumi.mihoyo.com', 'event/luna/hk4e/sign');
   String ua_version = jsonDecode(await File('data.json').readAsString())['miHoYo_ua_version'];
