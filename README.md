@@ -10,8 +10,8 @@
 - cookie_token_v2
 
 `HoYoLAB` cookie:
-- account_id_v2
-- ltmid_v2
+- ltoken_v2
+- ltuid_v2
 
 非让写`;`真让人难受,和Java C#一样
 
